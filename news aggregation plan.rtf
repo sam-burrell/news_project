@@ -1,0 +1,211 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww22060\viewh15500\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 news aggregation plan\
+\
+Initial Problems:\
+\
+
+\b 1. Aggregation
+\b0 \
+\
+
+\b Raw Web Crawler\
+
+\b0 Scrappy with Scrapoxy initially for specific Websites\
+\
+
+\b Later\
+
+\b0 4 chan
+\b \
+
+\b0 Redit\
+Twitter\
+Facebook\
+\
+
+\b Problems:
+\b0 \
+Each news article needs to be bullet proof text nothing more.\
+Needs to be completely robust. \
+This will need to be dynamic and 
+\b fast. 
+\b0 \
+Will it need to be site specific - (ideally not how can I do this in the long run?) Scrape in the DOM?\
+	Parse Frontpage for links\
+What automatic tests are needed to ensure this remains consistent after website/css/language updates etc\'85\
+\
+
+\b Analysis Keywords and category
+\b0 \
+\
+read article. stem and tokenise by importance. array of words in article (remove stop words)\
+An intelligent step?\
+\
+
+\b DETACH THIS PROCESS FROM SPIDER
+\b0 \
+send url and keywords somewhere else to be processed into bins\
+analyse words in array and categorise and fit whole array into bins that are known.\
+\
+known bins an array representing the \'93topics of the time\'94 or \'93key real time issues\'94 what does this look like?\
+output - [readable array of phrases/words that represent key issues of the moment dynamically changing in importance]\
+\
+To do:\
+
+\b Expand sites\
+Make more robust - scrape in the DOM?
+\b0 \
+\
+
+\b Suggested format for tables
+\b0 \
+\
+how to cache well?\
+
+\b raw_articles
+\b0 \
+KEY URL\
+Datetime of publish\
+Headline\
+Article\
+Category if stated\
+Source\
+Generated Keywords\
+\
+?????In production do I need to store this?????\
+Yes for future analysis\'85\
+\
+
+\b very dynamic changing list of all keywords from all news articles.\
+reddis
+\b0 \
+hash?\
+keyword\
+expiry time\
+cache redis maybe dynamodb use redis - elasticache \
+\
+
+\b More stable (but still dynamic) topics to categorise articles into.
+\b0 \
+KEY \'93topics of the time\'94 - intelligent reduced from the dynamic changing complete list of keywords\
+expiry time\
+Score\
+LIST articles with this special keyword [URL]\
+LIST tweets with this special keyword [URL]?\
+LIST facebook posts with this special keyword [URL]?\
+Importance\
+\
+\
+\
+
+\b topics rank
+\b0 \
+list key topics ranked by importance score)\
+\
+\
+\
+
+\b raw_tweets? 
+\b0 better ways to do this?
+\b \
+raw_facebook? 
+\b0 better ways to do this?\
+\
+
+\b simple api for spitting all this out when needed
+\b0 \
+\
+
+\b 2. Analysis\
+\
+
+\b0 Analysis Keywords and category\
+\
+read article. stem and tokenise by importance. array of words in article\
+analyse words in array and categorise and fit whole array into bins that are known.\
+\
+known bins an array representing the \'93topics of the time\'94 or \'93key real time issues\'94 what does this look like?\
+output - [readable array of phrases/words that represent key issues of the moment dynamically changing in importance]\
+\
+
+\b zeitgeist\
+what makes it important?\
+what makes it exist?\
+does the name change? can this be tracked? does it matter?\
+self referencing? important?
+\b0 \
+\
+\
+Analysis Key numbers\
+Analysis Positive/Negative - Score\
+Analysis Violent/Non Violent - Score\
+
+\b \
+Facts
+\b0 \
+(Analysis Fact/Opinion - Score)\
+(Analysis Fact Checking)\
+\
+Simple API for spitting this out when needed.\
+\
+\
+Background Reading\
+Truthbot {\field{\*\fldinst{HYPERLINK "http://summerscope.github.io/govhack/2016/truthbot/"}}{\fldrslt http://summerscope.github.io/govhack/2016/truthbot/}}\
+Fast CPython network {\field{\*\fldinst{HYPERLINK "https://github.com/explosion/spaCy"}}{\fldrslt https://github.com/explosion/spaCy}}\
+\
+
+\b I want:\
+
+\b0 \
+List of keywords from article with weightings\
+Calculated category from analysis\
+Stated Facts\
+Sentiment Analysis (details)\
+	Positive/Negative\
+	Violent/Non Violent\
+	Economic\
+A metric to determine cross citations, probable citations\
+News grading/Validity\
+Fact checking\
+Likelihood of fake news.\
+community good debate get key facts\
+choose press arguments that support arguments use this to source.\
+reaching consensus\
+A tool to allow \
+At some time down to opinion \
+lets the reader make their own opinion. \
+
+\b automate debates of the time 
+\b0 \
+	\
+\
+
+\b Later
+\b0 \
+Opinion summation\
+Political Bias\
+\
+Error checking\
+Fake news analysis, with twitter, numeric measure, cross citations\
+meta critic of news\
+news grading/validity\
+\
+how to present neutrality\
+\
+
+\b 3. User Interface
+\b0 \
+Display results well\
+WEB INITIALLY\
+\
+Decent App with user interface\
+\
+\
+\pard\pardeftab720\partightenfactor0
+\cf0 \expnd0\expndtw0\kerning0
+U2FsdGVkX19FSH2WlLMFK2z2T/A17cpy0wS49932zPENbK+zNrz7PWrSnTbDfbTTNuOdWG8MiO4ShOTxizgwXLN/X0NP7btwWxtW10pUlzLmO2AV9JhY1tCWPmuDwMtEQ1CiA1ht5C750y58bftpp/WfJD4Yz1lQ7YdDXs9PiMxE1WRqZEBjSsbc2k+2N6n2XDyni5C0K58ls0aSGhKuw/82AIORFa8uuDucvsBV/1Y=}
